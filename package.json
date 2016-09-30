@@ -1,0 +1,19 @@
+{
+  "name": "unix-sqlcipher",
+  "version": "0.0.0",
+  "description": "Encrypted sqlite3 for MacOS and Linux",
+  "keywords": [
+    "sqlite3",
+    "sqlite",
+    "sqlcipher",
+    "encrypt"
+  ],
+  "repository": "git://github.com/fritx/unix-sqlcipher.git",
+  "scripts": {
+    "install": "node install"
+  },
+  "dependencies": {
+    "shelljs": "^0.7.4",
+    "sqlite3": "3.x"
+  }
+}

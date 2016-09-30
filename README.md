@@ -1,6 +1,7 @@
 # unix-sqlcipher
 
-> `cross-sqlcipher` = `unix-sqlcipher` + `win-sqlcipher`
+> Encrypted sqlite3 for MacOS and Linux
+> See also: [cross-sqlcipher](https://github.com/fritx/cross-sqlcipher)
 
 ```sh
 npm install unix-sqlcipher

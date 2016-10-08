@@ -3,10 +3,8 @@
 'use strict'
 require('shelljs/global')
 
-if (process.plarform === 'win32') {
-  // windows
-  throw new Error('`win32` is not supported. Perhaps you should look for `cross-sqlcipher`.')
-} else if (process.platform === 'darwin') {
+// not windows
+if (process.platform === 'darwin') {
   // macos
   if (exec('which brew').stdout.trim() === '') {
     throw new Error('`brew` is required to be installed.')

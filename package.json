@@ -1,6 +1,6 @@
 {
   "name": "unix-sqlcipher",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Encrypted sqlite3 for MacOS and Linux",
   "keywords": [
     "sqlite3",
@@ -10,6 +10,7 @@
   ],
   "repository": "git://github.com/fritx/unix-sqlcipher.git",
   "scripts": {
+    "nwbuild": "npm i --runtime=node-webkit --target=0.12.3 --target_arch=x64",
     "preinstall": "node preinstall",
     "postinstall": "node postinstall"
   },

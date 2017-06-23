@@ -1,3 +1,8 @@
+dependencies:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install sqlcipher
+
 machine:
   node:
     version: 8.1.2

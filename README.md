@@ -1,5 +1,7 @@
 # unix-sqlcipher
 
+<a href="https://circleci.com/gh/fritx/unix-sqlcipher/tree/dev"><img height="20" src="https://circleci.com/gh/fritx/unix-sqlcipher/tree/dev.svg?style=svg"></a>
+
 > Encrypted sqlite3 for MacOS and Linux
 > See also: [cross-sqlcipher](https://github.com/fritx/cross-sqlcipher)
 

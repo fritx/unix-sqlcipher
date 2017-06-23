@@ -10,11 +10,14 @@
   ],
   "repository": "git://github.com/fritx/unix-sqlcipher.git",
   "scripts": {
-    "test": "node test",
+    "test": "ava test.js",
     "nwtest": "nw nw",
     "nwbuild": "npm i --runtime=node-webkit --target=0.12.3 --target_arch=x64",
     "preinstall": "node preinstall",
     "postinstall": "node postinstall"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
   },
   "dependencies": {
     "shelljs": "^0.7.4",

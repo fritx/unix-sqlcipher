@@ -96,3 +96,30 @@ test.serial.cb('decrypt with wrong cipher', t => {
     })
   })
 })
+
+// https://github.com/fritx/cross-sqlcipher/issues/4
+// https://github.com/mapbox/node-sqlite3/issues/622#issuecomment-212518985
+test.serial.cb('has lastID', t => {
+  let db = new sqlite3.Database(dbFile)
+  t.plan(2)
+
+  db.serialize(() => {
+    db.run("PRAGMA KEY = 'secret'")
+    db.run("PRAGMA CIPHER = 'aes-256-cbc'")
+
+    db.run('INSERT INTO lorem VALUES (?)', 'test-lastID-1', function (err) {
+      if (err) return t.end(err)
+      t.is(this.lastID, 11)
+    })
+
+    let stmt = db.prepare('INSERT INTO lorem VALUES (?)')
+    stmt.run('test-lastID-2', err => {
+      if (err) return t.end(err)
+      t.is(stmt.lastID, 12)
+    })
+  })
+
+  db.close(() => {
+    t.end()
+  })
+})

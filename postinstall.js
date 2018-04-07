@@ -15,7 +15,7 @@ try {
   }
 }
 var targetArgs = args.filter(function (arg) {
-  return /^--(runtime|target)/.test(arg)
+  return /^--(runtime|target|dist-url)/.test(arg)
 })
 var targetStr = targetArgs.reduce(function (m, arg) {
   return m + ' ' + arg

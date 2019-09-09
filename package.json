@@ -1,6 +1,6 @@
 {
   "name": "unix-sqlcipher",
-  "version": "0.0.5",
+  "version": "0.4.0-alpha.0",
   "description": "Encrypted sqlite3 for MacOS and Linux",
   "keywords": [
     "sqlite3",

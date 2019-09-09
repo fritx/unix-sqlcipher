@@ -68,8 +68,8 @@ test.serial.cb('decrypt with wrong key', t => {
 
     t.plan(1)
     db.each("SELECT rowid AS id, info FROM lorem", function(err) {
-      // [Error: SQLITE_NOTADB: file is encrypted or is not a database]
-      t.regex(err.message, /file is encrypted/)
+      // [Error: SQLITE_NOTADB: file is not a database]
+      t.regex(err.message, /file is not a database/)
     })
 
     db.close(() => {
@@ -87,8 +87,8 @@ test.serial.cb('decrypt with wrong cipher', t => {
 
     t.plan(1)
     db.each("SELECT rowid AS id, info FROM lorem", function(err) {
-      // [Error: SQLITE_NOTADB: file is encrypted or is not a database]
-      t.regex(err.message, /file is encrypted/)
+      // [Error: SQLITE_NOTADB: file is not a database]
+      t.regex(err.message, /file is not a database/)
     })
 
     db.close(() => {

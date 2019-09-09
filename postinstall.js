@@ -4,7 +4,7 @@
 require('shelljs/global')
 var isArray = require('util').isArray
 
-var sq3version = '3.x'
+var sq3version = '4.x'
 
 var args
 try {

@@ -4,6 +4,8 @@
 require('shelljs/global')
 var isArray = require('util').isArray
 
+var sq3version = '3.x'
+
 var args
 try {
   args = JSON.parse(process.env.npm_config_argv).original
@@ -34,13 +36,11 @@ if (process.platform === 'darwin') {
   }
   exec('export LDFLAGS="-L`brew --prefix`/opt/sqlcipher/lib"')
   exec('export CPPFLAGS="-I`brew --prefix`/opt/sqlcipher/include"')
-  cd('node_modules/sqlite3')
-  exec('npm i --build-from-source --sqlite_libname=sqlcipher --sqlite=`brew --prefix`' + targetStr)
+  exec('npm i sqlite3@' + sq3version + ' --no-save --build-from-source --sqlite_libname=sqlcipher --sqlite=`brew --prefix`' + targetStr)
 } else {
   // linux
   exec('export LDFLAGS="-L/usr/local/lib"')
   exec('export CPPFLAGS="-I/usr/local/include -I/usr/local/include/sqlcipher"')
   exec('export CXXFLAGS="$CPPFLAGS"')
-  cd('node_modules/sqlite3')
-  exec('npm i --build-from-source --sqlite_libname=sqlcipher --sqlite=/usr/local --verbose' + targetStr)
+  exec('npm i sqlite3@' + sq3version + ' --no-save --build-from-source --sqlite_libname=sqlcipher --sqlite=/usr/local --verbose' + targetStr)
 }
